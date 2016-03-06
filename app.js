@@ -32,6 +32,8 @@ function onOrientationChanged() {
 	} else {
 		
 	}
+	var image = document.getElementById("photo");
+    image.width = window.innerWidth;
 }
 
 function portrait() {
@@ -43,13 +45,14 @@ function portrait() {
 }
 
 function takePhoto() {
-	navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+	navigator.camera.getPicture(onSuccess, onFail, { quality: 100,
 	    destinationType: Camera.DestinationType.FILE_URI });
 }
 
 function onSuccess(imageURI) {
     var image = document.getElementById("photo");
     image.src = imageURI;
+    image.width = window.innerWidth;
 }
 
 function onFail(message) {
