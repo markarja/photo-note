@@ -1,11 +1,14 @@
+if (!String.prototype.startsWith) {
+  String.prototype.startsWith = function(searchString, position) {
+    position = position || 0;
+    return this.indexOf(searchString, position) === position;
+  };
+}
+
 function init() {
-	
-	alert("init()");
 	
 	language = window.navigator.language || window.navigator.browserLanguage;
 	language = language.toLowerCase();
-	
-	alert(language);
 
 	if(language.startsWith("es")) {
 		language = "es-es";
@@ -13,11 +16,7 @@ function init() {
 		language = "de-de";
 	}
 	
-	alert(language);
-	
 	localize(language);
-	
-	alert("registering event listeners");
 	
 	document.addEventListener("deviceready", onDeviceReady, false);
 	window.addEventListener("resize", onOrientationChanged, false);
