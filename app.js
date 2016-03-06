@@ -23,7 +23,7 @@ function init() {
 	
 	var canvas = document.getElementById("canvas");
 	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight;
+	canvas.height = window.innerHeight - 30;
 }
 
 function onDeviceReady() {
@@ -38,7 +38,7 @@ function onOrientationChanged() {
 	}
 	var canvas = document.getElementById("canvas");
 	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight;
+	canvas.height = window.innerHeight - 30;
 }
 
 function portrait() {
@@ -55,7 +55,7 @@ function takePhoto() {
 }
 
 function onSuccess(imageURI) {
-	var image = new Image();
+	var image = document.getElementById("photo");
     image.src = imageURI;
     image.width = window.innerWidth;
     var canvas = document.getElementById("canvas");

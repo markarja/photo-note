@@ -1,0 +1,16 @@
+#photo {
+	visibility: hidden;
+	position: fixed;
+	top: 30px;
+	left: 0px;	
+	z-index: 0;
+}
+
+#canvas {
+	position: fixed;
+	top: 30px;
+	left: 0px;	
+	z-index: 1;
+	border: 1px solid rgb(0,0,0);
+}
+
