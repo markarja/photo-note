@@ -76,7 +76,12 @@ function onSuccess(imageURI) {
     	  photo.src = "data:image/jpeg;base64," + data.imageData; 
       }, function (error) {
     	  alert("Error : \r\n" + error);
-      }, imageURI, 0.5, 0.5, {resizeType:ImageResizer.RESIZE_TYPE_FACTOR ,format:'jpg'});
+      }, imageURI, 0.5, 0.5, {
+    	  resizeType:ImageResizer.RESIZE_TYPE_FACTOR,
+    	  format:'jpg',
+    	  imageType : ImageResizer.IMAGE_DATA_TYPE_URL,
+    	  storeImage : false,
+    	  pixelDensity : true});
     
 	//photo.src = imageURI;
 }
