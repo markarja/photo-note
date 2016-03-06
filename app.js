@@ -1,3 +1,6 @@
+var photo = null;
+var canvas = null;
+
 if (!String.prototype.startsWith) {
   String.prototype.startsWith = function(searchString, position) {
     position = position || 0;
@@ -21,9 +24,11 @@ function init() {
 	document.addEventListener("deviceready", onDeviceReady, false);
 	window.addEventListener("resize", onOrientationChanged, false);
 	
-	var canvas = document.getElementById("canvas");
+	photo = document.getElementById("photo");
+	photo.width = window.innerWidth;
+	canvas = document.getElementById("canvas");
 	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight - 30;
+	canvas.height = window.innerHeight - 40;
 }
 
 function onDeviceReady() {
@@ -36,9 +41,12 @@ function onOrientationChanged() {
 	} else {
 		
 	}
-	var canvas = document.getElementById("canvas");
+	
+	photo = document.getElementById("photo");
+	photo.width = window.innerWidth;
+	canvas = document.getElementById("canvas");
 	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight - 30;
+	canvas.height = window.innerHeight - 40;
 }
 
 function portrait() {
@@ -55,12 +63,12 @@ function takePhoto() {
 }
 
 function onSuccess(imageURI) {
-	var image = document.getElementById("photo");
-    image.src = imageURI;
-    image.width = window.innerWidth;
-    var canvas = document.getElementById("canvas");
+	photo = document.getElementById("photo");
+	photo.src = imageURI;
+	photo.width = window.innerWidth;
+    canvas = document.getElementById("canvas");
     var context = canvas.getContext("2d");
-    context.drawImage(image, 0, 0);
+    context.drawImage(photo, 0, 0);
 }
 
 function onFail(message) {
