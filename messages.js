@@ -1,13 +1,13 @@
 var language = "en-us";
 var messages = {
 	"en-us" : [
-	    {"key" : "messagekey", "value" : "messagevalue"}
+	    {"key" : "takephoto", "value" : "Take photo"}
 	],	
 	"fi-fi" : [
-	    {"key" : "messagekey", "value" : "messagevalue"}
+	    {"key" : "takephoto", "value" : "Ota kuva"}
    	],
 	"sv-se" : [
-	    {"key" : "messagekey", "value" : "messagevalue"}    
+	    {"key" : "takephoto", "value" : "Ta foto"}    
   	], 
   	"es-es" : [  
   	    {"key" : "messagekey", "value" : "messagevalue"}       
