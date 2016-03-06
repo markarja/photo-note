@@ -9,7 +9,11 @@ function init() {
 		language = "de-de";
 	}
 	
+	alert(language);
+	
 	localize(language);
+	
+	alert("registering event listeners");
 	
 	document.addEventListener("deviceready", onDeviceReady, false);
 	window.addEventListener("resize", onOrientationChanged, false);
