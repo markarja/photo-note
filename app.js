@@ -63,12 +63,14 @@ function takePhoto() {
 }
 
 function onSuccess(imageURI) {
-	photo = document.getElementById("photo");
-	photo.src = imageURI;
-	photo.width = window.innerWidth;
     canvas = document.getElementById("canvas");
     var context = canvas.getContext("2d");
-    context.drawImage(photo, 0, 0);
+	photo = document.getElementById("photo");
+	photo.width = window.innerWidth;
+	photo.onload = function() {
+      context.drawImage(photo, 0, 0);
+    };
+	photo.src = imageURI;
 }
 
 function onFail(message) {

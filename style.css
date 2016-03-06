@@ -3,6 +3,7 @@
 	top: 40px;
 	left: 0px;	
 	z-index: 0;
+	visibility: hidden;
 }
 
 #canvas {
