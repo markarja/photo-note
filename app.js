@@ -1,8 +1,12 @@
 function init() {
 	
+	alert("init()");
+	
 	language = window.navigator.language || window.navigator.browserLanguage;
 	language = language.toLowerCase();
 	
+	alert(language);
+
 	if(language.startsWith("es")) {
 		language = "es-es";
 	} else if(language.startsWith("de")) {
