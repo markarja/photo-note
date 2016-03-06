@@ -70,7 +70,15 @@ function onSuccess(imageURI) {
 	photo.onload = function() {
       context.drawImage(photo, 0, 0);
     };
-	photo.src = imageURI;
+    
+    window.imageResizer.resizeImage(
+      function(data) { 
+    	  photo.src = "data:image/jpeg;base64," + data.imageData; 
+      }, function (error) {
+    	  alert("Error : \r\n" + error);
+      }, imageURI, 0.5, 0.5, {resizeType:ImageResizer.RESIZE_TYPE_FACTOR ,format:'jpg'});
+    
+	//photo.src = imageURI;
 }
 
 function onFail(message) {
