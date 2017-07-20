@@ -41,7 +41,7 @@
     <preference name="DisallowOverscroll" 		  value="true" />
 
     <plugin name="cordova-plugin-camera" source="npm" />
-    <plugin name="com.synconset.imageresizer" source="npm" />
+    <plugin name="cordova-plugin-image-resizer" source="npm" />
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
