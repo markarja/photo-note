@@ -65,7 +65,7 @@ function takePhoto() {
 
 function savePhoto() {
 	
-	var imageData = context.toDataURL('image/jpeg', 1.0);
+	var imageData = canvas.toDataURL('image/jpeg', 1.0);
 	
 	window.imageResizer.storeImage(
 	  function(data) { 
