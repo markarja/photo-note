@@ -71,17 +71,27 @@ function onSuccess(imageURI) {
       context.drawImage(photo, 0, 0);
     };
     
+    window.imageResizer.getImageSize(
+	  function(data) { 
+    	  alert('w = ' + data.width + ', h = ' + data.height);
+      }, function (error) {
+    	  alert("Error : \r\n" + error);
+      }, imageURI, { }
+    );
+    
     window.imageResizer.resizeImage(
       function(data) { 
     	  photo.src = "data:image/jpeg;base64," + data.imageData; 
       }, function (error) {
     	  alert("Error : \r\n" + error);
-      }, imageURI, 0.5, 0.5, {
+      }, imageURI, 0.2, 0.2, {
     	  resizeType:ImageResizer.RESIZE_TYPE_FACTOR,
     	  format:'jpg',
     	  imageType : ImageResizer.IMAGE_DATA_TYPE_URL,
     	  storeImage : false,
-    	  pixelDensity : true});
+    	  pixelDensity : true
+      }
+    );
     
 	//photo.src = imageURI;
 }
