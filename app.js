@@ -65,7 +65,10 @@ function takePhoto() {
 
 function savePhoto() {
 	
+	canvas = document.getElementById("canvas");
 	var imageData = canvas.toDataURL('image/jpeg', 1.0);
+	
+	alert(imageData);
 	
 	window.imageResizer.storeImage(
 	  function(data) { 
