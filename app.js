@@ -75,7 +75,10 @@ function savePhoto() {
     	  alert('Image stored successfully');
       }, function (error) {
     	  alert("Error : \r\n" + error);
-      }, imageData, { quality:100 }
+      }, imageData, { 
+    	  quality:100,
+    	  imageDataType: ImageResizer.IMAGE_DATA_TYPE_BASE64 
+      }
     );
 	
 }
