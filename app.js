@@ -1,5 +1,6 @@
 var photo = null;
 var canvas = null;
+var context = null;
 
 if (!String.prototype.startsWith) {
   String.prototype.startsWith = function(searchString, position) {
@@ -62,9 +63,21 @@ function takePhoto() {
 	    destinationType: Camera.DestinationType.FILE_URI });
 }
 
+function handle(canvas, event) {
+    var rect = canvas.getBoundingClientRect();
+
+    var x = event.clientX - rect.left;
+    var y = event.clientY - rect.top;
+    
+    context.beginPath();
+    context.arc(x, y, 10, 0, 2 * Math.PI, false);
+    context.fillStyle = 'white';
+    context.fill();
+}
+
 function onSuccess(imageURI) {
     canvas = document.getElementById("canvas");
-    var context = canvas.getContext("2d");
+    context = canvas.getContext("2d");
     var w = 0;
     var rf = 1;
 	photo = document.getElementById("photo");
