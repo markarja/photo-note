@@ -1,13 +1,16 @@
 var language = "en-us";
 var messages = {
 	"en-us" : [
-	    {"key" : "takephoto", "value" : "Take photo"}
+	    {"key" : "takephoto", "value" : "Take photo"},
+	    {"key" : "savephoto", "value" : "Save photo"}
 	],	
 	"fi-fi" : [
-	    {"key" : "takephoto", "value" : "Ota kuva"}
+	    {"key" : "takephoto", "value" : "Ota kuva"},
+	    {"key" : "savephoto", "value" : "Tallenna kuva"}
    	],
 	"sv-se" : [
-	    {"key" : "takephoto", "value" : "Ta foto"}    
+	    {"key" : "takephoto", "value" : "Ta foto"},
+	    {"key" : "savephoto", "value" : "Spara foto"} 
   	], 
   	"es-es" : [  
   	    {"key" : "messagekey", "value" : "messagevalue"}       

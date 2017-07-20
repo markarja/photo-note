@@ -63,6 +63,21 @@ function takePhoto() {
 	    destinationType: Camera.DestinationType.FILE_URI });
 }
 
+function savePhoto() {
+	
+	var imageData = context.toDataURL('image/jpeg', 1.0);
+	
+	window.imageResizer.storeImage(
+	  function(data) { 
+    	  alert('Image stored successfully');
+      }, function (error) {
+    	  alert("Error : \r\n" + error);
+      }, imageData, { quality:100 }
+    );
+	
+}
+
+
 function handle(canvas, event) {
     var rect = canvas.getBoundingClientRect();
 
@@ -90,7 +105,7 @@ function onSuccess(imageURI) {
 	  function(data) { 
     	  w = data.width;    	  
     	  rf = window.innerWidth / w;
-    	  alert(rf);
+    	  //alert(rf);
       }, function (error) {
     	  alert("Error : \r\n" + error);
       }, imageURI, { }
