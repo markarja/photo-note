@@ -76,7 +76,8 @@ function onSuccess(imageURI) {
     window.imageResizer.getImageSize(
 	  function(data) { 
     	  w = data.width;    	  
-    	  rf = w / window.innerWidth;
+    	  rf = window.innerWidth / w;
+    	  alert(rf);
       }, function (error) {
     	  alert("Error : \r\n" + error);
       }, imageURI, { }
