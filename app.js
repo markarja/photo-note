@@ -65,6 +65,8 @@ function takePhoto() {
 function onSuccess(imageURI) {
     canvas = document.getElementById("canvas");
     var context = canvas.getContext("2d");
+    var h = 0;
+    var rf = 1;
 	photo = document.getElementById("photo");
 	photo.width = window.innerWidth;
 	photo.onload = function() {
@@ -73,7 +75,8 @@ function onSuccess(imageURI) {
     
     window.imageResizer.getImageSize(
 	  function(data) { 
-    	  alert('w = ' + data.width + ', h = ' + data.height);
+    	  w = data.width;    	  
+    	  rf = w / window.innerWidth;
       }, function (error) {
     	  alert("Error : \r\n" + error);
       }, imageURI, { }
@@ -84,7 +87,7 @@ function onSuccess(imageURI) {
     	  photo.src = "data:image/jpeg;base64," + data.imageData; 
       }, function (error) {
     	  alert("Error : \r\n" + error);
-      }, imageURI, 0.2, 0.2, {
+      }, imageURI, rf, rf, {
     	  resizeType:ImageResizer.RESIZE_TYPE_FACTOR,
     	  format:'jpg',
     	  imageType : ImageResizer.IMAGE_DATA_TYPE_URL,
