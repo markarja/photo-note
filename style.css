@@ -7,7 +7,7 @@ body {
 	font-size: 25px !important;	
 }
 
-#photo {
+.photo {
 	position: fixed;
 	top: 40px;
 	left: 0px;	
@@ -15,10 +15,18 @@ body {
 	visibility: hidden;
 }
 
-#canvas {
+.canvas {
 	position: fixed;
 	top: 40px;
 	left: 0px;	
 	z-index: 1;
+}
+
+.help {
+	font-family: arial;
+	font-size: 12px;
+	position: fixed;
+	right: 15px;
+	top: 15px;	
 }
 

@@ -81,6 +81,8 @@ function onSuccess(imageURI) {
 	photo.onload = function() {
       context.drawImage(photo, 0, 0);
     };
+    document.getElementById('help').innerHTML = 
+    	getMessage('help-measure-first');
 }
 
 function onFail(message) {
