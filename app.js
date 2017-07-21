@@ -1,6 +1,8 @@
 var photo = null;
 var canvas = null;
 var context = null;
+var state = 0;
+var x0,y0;
 
 if (!String.prototype.startsWith) {
   String.prototype.startsWith = function(searchString, position) {
@@ -61,15 +63,42 @@ function save() {
 
 
 function handle(canvas, event) {
+	
     var rect = canvas.getBoundingClientRect();
-
     var x = event.clientX - rect.left;
     var y = event.clientY - rect.top;
     
-    context.beginPath();
-    context.arc(x, y, 2, 0, 2 * Math.PI, false);
-    context.fillStyle = 'white';
-    context.fill();
+    if(state == 0) {
+        
+        context.beginPath();
+        context.arc(x, y, 2, 0, 2 * Math.PI, false);
+        context.fillStyle = 'white';
+        context.fill();
+        
+    	x0 = x;
+    	y0 = y;
+    	
+    	document.getElementById('help').innerHTML = 
+        	getMessage('help-measure-second');
+    	
+    	state = 1;
+    	
+    } else if(state == 1) {
+    	
+    	 context.beginPath();
+         context.moveTo(x0, x1);
+         context.lineTo(x, y);
+         context.fillStyle = 'white';
+         context.stroke();
+         
+         document.getElementById('help').innerHTML = 
+         	getMessage('help-measure-text');
+         
+         state = 2;
+         
+    } else {
+    	
+    }
 }
 
 function onSuccess(imageURI) {
