@@ -23,7 +23,6 @@ function init() {
 	localize(language);
 	
 	document.addEventListener("deviceready", onDeviceReady, false);
-	window.addEventListener("resize", onOrientationChanged, false);
 	
 	photo = document.getElementById("photo");
 	photo.width = window.innerWidth;
@@ -33,29 +32,7 @@ function init() {
 }
 
 function onDeviceReady() {
-	alert("device is ready");
-}
-
-function onOrientationChanged() {
-	if(portrait()) {
-		
-	} else {
-		
-	}
 	
-	photo = document.getElementById("photo");
-	photo.width = window.innerWidth;
-	canvas = document.getElementById("canvas");
-	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight - 40;
-}
-
-function portrait() {
-	if(window.innerHeight > window.innerWidth) {
-		return true;
-	} else {
-		return false;
-	}
 }
 
 function takePhoto() {
@@ -68,39 +45,18 @@ function takePhoto() {
 	);
 }
 
-function savePhoto() {
-	
-	/*
-	canvas = document.getElementById("canvas");
-	var imageData = canvas.toDataURL('image/jpeg', 1.0);
-	
-	alert(imageData);
-	
-	window.imageResizer.storeImage(
-	  function(data) { 
-    	  alert('Image stored successfully');
-      }, function (error) {
-    	  alert("Error : \r\n" + error);
-      }, imageData, { 
-    	  quality:100,
-    	  imageDataType: ImageResizer.IMAGE_DATA_TYPE_BASE64 
-      }
-    );*/
-	
-	alert(window.canvas2ImagePlugin);
-	
+function savePhoto() {	
 	window.canvas2ImagePlugin.saveImageDataToLibrary(
-        function(msg){
-            alert(msg);
+        function(message){
+            alert(message);
         },
-        function(err){
-            alert(err);
+        function(error){
+            alert(error);
         },
-        "test",
-        "test",
+        null,
+        null,
         document.getElementById('canvas')
     );
-	
 }
 
 
@@ -111,8 +67,8 @@ function handle(canvas, event) {
     var y = event.clientY - rect.top;
     
     context.beginPath();
-    context.arc(x, y, 10, 0, 2 * Math.PI, false);
-    context.fillStyle = 'grey';
+    context.arc(x, y, 2, 0, 2 * Math.PI, false);
+    context.fillStyle = 'white';
     context.fill();
 }
 
@@ -121,9 +77,7 @@ function onSuccess(imageURI) {
     context = canvas.getContext("2d");
 	photo = document.getElementById("photo");
 	photo.width = window.innerWidth;
-	
 	photo.src = imageURI;
-	
 	photo.onload = function() {
       context.drawImage(photo, 0, 0);
     };
