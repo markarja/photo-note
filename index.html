@@ -8,13 +8,14 @@
 	   	<link rel="stylesheet" href="style.css" type="text/css">
 		<script src="phonegap.js"></script>
 		<script src="res/messages.js"></script>
-		<link rel="stylesheet" href="res/font-awesome-4.7.0/css/font-awesome.min.css">	   
+		<link rel="stylesheet" href="res/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+	 	<link rel="stylesheet" href="res/pe-icon-7-stroke/css/helper.css">	   
 		<script src="app.js"></script>
 	</head>
   	<body onload="init();">
-  		<i class="fa fa-camera icon" onclick="capture()"></i>
-  		&nbsp;&nbsp;&nbsp;
-  		<i class="fa fa-save icon" onclick="save()"></i>
+		<span class="pe-7s-camera pe-2x pe-va" onclick="capture()"></span>
+		 &nbsp;&nbsp;&nbsp;
+		<span class="pe-7s-diskette pe-2x pe-va" onclick="save()"></span>
   		<canvas id="canvas" onclick="handle(this, event);"></canvas>
   		<img id="photo" />
 	</body>
