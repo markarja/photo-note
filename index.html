@@ -7,12 +7,14 @@
 	    <meta name="apple-mobile-web-app-capable" content="yes">    
 	   	<link rel="stylesheet" href="style.css" type="text/css">
 		<script src="phonegap.js"></script>
-		<script src="messages.js"></script>	   
+		<script src="res/messages.js"></script>
+		<link rel="stylesheet" href="res/font-awesome-4.7.0/css/font-awesome.min.css">	   
 		<script src="app.js"></script>
 	</head>
   	<body onload="init();">
-  		<button id="takephoto" onclick="takePhoto()"></button>
-  		<button id="savephoto" onclick="savePhoto()"></button>
+  		<i class="fa fa-camera icon" onclick="capture()"></i>
+  		&nbsp;&nbsp;&nbsp;
+  		<i class="fa fa-save icon" onclick="save()"></i>
   		<canvas id="canvas" onclick="handle(this, event);"></canvas>
   		<img id="photo" />
 	</body>

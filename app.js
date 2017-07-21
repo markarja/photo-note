@@ -35,7 +35,7 @@ function onDeviceReady() {
 	
 }
 
-function takePhoto() {
+function capture() {
 	navigator.camera.getPicture(onSuccess, onFail, { 
 			quality: 100,
 			destinationType: Camera.DestinationType.FILE_URI,
@@ -45,7 +45,7 @@ function takePhoto() {
 	);
 }
 
-function savePhoto() {	
+function save() {	
 	window.canvas2ImagePlugin.saveImageDataToLibrary(
         function(message){
             alert(message);
