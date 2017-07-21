@@ -43,3 +43,12 @@ body {
 	background-color: #000000;	
 }
 
+.text {
+	position:fixed; 
+	left: 100px; 
+	top: 100px; 
+	width: 50px;
+	z-index: 2;
+	visibility: hidden;
+}
+

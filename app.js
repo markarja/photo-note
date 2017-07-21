@@ -97,11 +97,19 @@ function handle(canvas, event) {
          
          state = 2;
          
+         document.getElementById("text").style.left = x + 'px';
+         document.getElementById("text").style.top = y + 'px';
+         document.getElementById("text").style.visibility = 'visible';
+         
     } else {
     	
+    	document.getElementById("text").style.visibility = 'hidden';
     	context.font = "10px Arial";
-    	context.fillText("200 cm",x + 10,y - 100);
+    	context.fillText(document.getElementById("text").value,x - (x0 / 2),y - 5);
     	context.fillStyle = '#ffffff';
+    	document.getElementById("text").value = '';
+        document.getElementById('help').innerHTML = 
+        	getMessage('help-measure-first');
     	
     	state = 0;
     	

@@ -3,10 +3,10 @@ var messages = {
 	"en-us" : [
 	    {"key" : "takephoto", "value" : "Take photo"},
 	    {"key" : "savephoto", "value" : "Save photo"},
-	    {"key" : "help", "value" : "Tap on the camera to take a photo."},
+	    {"key" : "help", "value" : "Tap the camera to take a photo."},
 	    {"key" : "help-measure-first", "value" : "Tap on the screen to add first point of a measure."},
 	    {"key" : "help-measure-second", "value" : "Tap on the screen to add second point of a measure."},
-	    {"key" : "help-measure-text", "value" : "Enter measurement value."}
+	    {"key" : "help-measure-text", "value" : "Enter a measurement value."}
 	],	
 	"fi-fi" : [
 	    {"key" : "takephoto", "value" : "Ota kuva"},
