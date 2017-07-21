@@ -9,7 +9,7 @@ body {
 
 .photo {
 	position: fixed;
-	top: 40px;
+	top: 0px;
 	left: 0px;	
 	z-index: 0;
 	visibility: hidden;
@@ -17,9 +17,10 @@ body {
 
 .canvas {
 	position: fixed;
-	top: 40px;
+	top: 0px;
 	left: 0px;	
-	z-index: 1;
+	z-index: 0;
+	border: 1px solid #ffffff;
 }
 
 .help {
@@ -28,5 +29,14 @@ body {
 	position: fixed;
 	right: 15px;
 	top: 15px;	
+}
+
+.tools {
+	position: fixed;
+	height: 45px;
+	width: 100%;
+	text-align: left;
+	z-index: 1;
+	opacity: 0.98;	
 }
 

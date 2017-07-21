@@ -28,7 +28,7 @@ function init() {
 	photo.width = window.innerWidth;
 	canvas = document.getElementById("canvas");
 	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight - 40;
+	canvas.height = window.innerHeight;
 }
 
 function onDeviceReady() {
