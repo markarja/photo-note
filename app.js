@@ -70,6 +70,7 @@ function takePhoto() {
 
 function savePhoto() {
 	
+	/*
 	canvas = document.getElementById("canvas");
 	var imageData = canvas.toDataURL('image/jpeg', 1.0);
 	
@@ -84,6 +85,16 @@ function savePhoto() {
     	  quality:100,
     	  imageDataType: ImageResizer.IMAGE_DATA_TYPE_BASE64 
       }
+    );*/
+	
+	window.canvas2ImagePlugin.saveImageDataToLibrary(
+        function(msg){
+            alert(msg);
+        },
+        function(err){
+            alert(mdg);
+        },
+        document.getElementById('canvas')
     );
 	
 }
@@ -97,7 +108,7 @@ function handle(canvas, event) {
     
     context.beginPath();
     context.arc(x, y, 10, 0, 2 * Math.PI, false);
-    context.fillStyle = 'white';
+    context.fillStyle = 'grey';
     context.fill();
 }
 
@@ -105,37 +116,13 @@ function onSuccess(imageURI) {
     canvas = document.getElementById("canvas");
     context = canvas.getContext("2d");
 	photo = document.getElementById("photo");
+	photo.width = window.innerWidth;
+	
 	photo.src = imageURI;
+	
 	photo.onload = function() {
       context.drawImage(photo, 0, 0);
     };
-    
-    /*
-    window.imageResizer.getImageSize(
-	  function(data) { 
-    	  w = data.width;    	  
-    	  rf = window.innerWidth / w;
-    	  //alert(rf);
-      }, function (error) {
-    	  alert("Error : \r\n" + error);
-      }, imageURI, { }
-    );
-    
-    window.imageResizer.resizeImage(
-      function(data) { 
-    	  photo.src = "data:image/jpeg;base64," + data.imageData; 
-      }, function (error) {
-    	  alert("Error : \r\n" + error);
-      }, imageURI, 0.1, 0.1, {
-    	  resizeType:ImageResizer.RESIZE_TYPE_FACTOR,
-    	  format:'jpg',
-    	  imageType : ImageResizer.IMAGE_DATA_TYPE_URL,
-    	  storeImage : false,
-    	  pixelDensity : true
-      }
-    );*/
-    
-	//photo.src = imageURI;
 }
 
 function onFail(message) {
