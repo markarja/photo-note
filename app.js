@@ -61,6 +61,10 @@ function save() {
     );
 }
 
+function reset() {
+	photo = document.getElementById("photo");
+	context.drawImage(photo, 0, 0);
+}
 
 function handle(canvas, event, source) {
 	
