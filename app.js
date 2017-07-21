@@ -64,6 +64,10 @@ function save() {
 function reset() {
 	photo = document.getElementById("photo");
 	context.drawImage(photo, 0, 0);
+	document.getElementById("text").style.visibility = 'hidden';
+	document.getElementById("text").value = '';
+	document.getElementById('help').innerHTML = 
+    	getMessage('help-measure-first');
 }
 
 function handle(canvas, event, source) {
@@ -107,6 +111,7 @@ function handle(canvas, event, source) {
          document.getElementById("text").style.left = x + 'px';
          document.getElementById("text").style.top = y + 'px';
          document.getElementById("text").style.visibility = 'visible';
+         document.getElementById("text").focus();
          
     } else {
     	
