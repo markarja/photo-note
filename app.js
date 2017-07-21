@@ -86,7 +86,7 @@ function handle(canvas, event) {
     } else if(state == 1) {
     	
     	 context.beginPath();
-         context.moveTo(x0, x1);
+         context.moveTo(x0, y0);
          context.lineTo(x, y);
          context.fillStyle = 'white';
          context.stroke();
