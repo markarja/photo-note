@@ -20,7 +20,6 @@ body {
 	top: 0px;
 	left: 0px;	
 	z-index: 0;
-	border: 1px solid;
 }
 
 .help {
@@ -33,11 +32,14 @@ body {
 
 .tools {
 	position: fixed;
-	height: 45px;
+	top: 0;
+	left: 0;
+	padding: 5px;
+	height: 34px;
 	width: 100%;
 	text-align: left;
 	z-index: 1;
-	opacity: 0.98;
+	opacity: 0.95;
 	background-color: #000000;	
 }
 
