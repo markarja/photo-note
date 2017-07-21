@@ -20,7 +20,7 @@ body {
 	top: 0px;
 	left: 0px;	
 	z-index: 0;
-	border: 1px solid #ffffff;
+	border: 1px solid;
 }
 
 .help {
@@ -37,6 +37,7 @@ body {
 	width: 100%;
 	text-align: left;
 	z-index: 1;
-	opacity: 0.98;	
+	opacity: 0.98;
+	background-color: #000000;	
 }
 
