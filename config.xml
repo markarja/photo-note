@@ -41,7 +41,6 @@
     <preference name="DisallowOverscroll" 		  value="true" />
 
     <plugin name="cordova-plugin-camera" source="npm" />
-    <plugin name="cordova-plugin-image-resizer" source="npm" />
     <plugin name="org.devgeeks.canvas2imageplugin" source="npm" />
 
     <!-- Define app icon for each platform. -->
