@@ -59,8 +59,13 @@ function portrait() {
 }
 
 function takePhoto() {
-	navigator.camera.getPicture(onSuccess, onFail, { quality: 100,
-	    destinationType: Camera.DestinationType.FILE_URI });
+	navigator.camera.getPicture(onSuccess, onFail, { 
+			quality: 100,
+			destinationType: Camera.DestinationType.FILE_URI,
+			targetWidth: window.innerWidth,
+			targetHeight: window.innerHeight	
+		}
+	);
 }
 
 function savePhoto() {
@@ -99,14 +104,13 @@ function handle(canvas, event) {
 function onSuccess(imageURI) {
     canvas = document.getElementById("canvas");
     context = canvas.getContext("2d");
-    var w = 0;
-    var rf = 1;
 	photo = document.getElementById("photo");
-	photo.width = window.innerWidth;
+	photo.src = imageURI;
 	photo.onload = function() {
       context.drawImage(photo, 0, 0);
     };
     
+    /*
     window.imageResizer.getImageSize(
 	  function(data) { 
     	  w = data.width;    	  
@@ -129,7 +133,7 @@ function onSuccess(imageURI) {
     	  storeImage : false,
     	  pixelDensity : true
       }
-    );
+    );*/
     
 	//photo.src = imageURI;
 }
