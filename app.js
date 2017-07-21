@@ -87,13 +87,17 @@ function savePhoto() {
       }
     );*/
 	
+	alert(window.canvas2ImagePlugin);
+	
 	window.canvas2ImagePlugin.saveImageDataToLibrary(
         function(msg){
             alert(msg);
         },
         function(err){
-            alert(mdg);
+            alert(err);
         },
+        "test",
+        "test",
         document.getElementById('canvas')
     );
 	
