@@ -2,7 +2,7 @@ var photo = null;
 var canvas = null;
 var context = null;
 var state = 0;
-var x0,y0;
+var x, y, x0, y0;
 
 if (!String.prototype.startsWith) {
   String.prototype.startsWith = function(searchString, position) {
@@ -65,14 +65,14 @@ function save() {
 function handle(canvas, event) {
 	
     var rect = canvas.getBoundingClientRect();
-    var x = event.clientX - rect.left;
-    var y = event.clientY - rect.top;
+    x = event.clientX - rect.left;
+    y = event.clientY - rect.top;
     
     if(state == 0) {
         
         context.beginPath();
         context.arc(x, y, 2, 0, 2 * Math.PI, false);
-        context.fillStyle = 'white';
+        context.fillStyle = '#ffffff';
         context.fill();
         
     	x0 = x;
@@ -88,7 +88,8 @@ function handle(canvas, event) {
     	 context.beginPath();
          context.moveTo(x0, y0);
          context.lineTo(x, y);
-         context.fillStyle = 'white';
+         context.strokeStyle = '#ffffff';
+         context.lineWidth = 2;
          context.stroke();
          
          document.getElementById('help').innerHTML = 
@@ -97,6 +98,12 @@ function handle(canvas, event) {
          state = 2;
          
     } else {
+    	
+    	context.font = "10px Arial";
+    	context.fillText("200 cm",x + 10,y - 100);
+    	context.fillStyle = '#ffffff';
+    	
+    	state = 0;
     	
     }
 }
