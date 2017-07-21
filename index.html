@@ -19,8 +19,8 @@
 			<span class="pe-7s-diskette pe-2x pe-va" onclick="save()"></span>
 			<span id="help" class="help"></span>
 		</div>
-  		<canvas id="canvas" class="canvas" onclick="handle(this, event);"></canvas>
+  		<canvas id="canvas" class="canvas" onclick="handle(this, event, 'canvas');"></canvas>
   		<img id="photo" class="photo" />
-  		<input id="text" type="text" value="" class="text" onchange="handle(this, event);" />
+  		<input id="text" type="text" value="" class="text" onchange="handle(this, event, 'input');" />
 	</body>
 </html>

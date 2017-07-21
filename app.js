@@ -62,11 +62,14 @@ function save() {
 }
 
 
-function handle(canvas, event) {
+function handle(canvas, event, source) {
 	
     var rect = canvas.getBoundingClientRect();
-    x = event.clientX - rect.left;
-    y = event.clientY - rect.top;
+	
+    if(source == 'canvas') {
+    	x = event.clientX - rect.left;
+    	y = event.clientY - rect.top;
+	}
     
     if(state == 0) {
         
