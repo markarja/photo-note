@@ -52,16 +52,20 @@ function capture() {
 	);
 }
 
-function save() {	
-	window.canvas2ImagePlugin.saveImageDataToLibrary(
-        function(message){
-            alert(message);
-        },
-        function(error){
-            alert(error);
-        },
-        document.getElementById('canvas')
-    );
+function save() {
+	try {
+		window.canvas2ImagePlugin.saveImageDataToLibrary(
+	        function(message){
+	            alert(message);
+	        },
+	        function(error){
+	            alert(error);
+	        },
+	        document.getElementById('canvas')
+	    );
+	} catch (e) {
+		alert(e);
+	}
 }
 
 function reset() {
