@@ -139,7 +139,7 @@ function onSuccess(imageURI) {
     canvas = document.getElementById("canvas");
     context = canvas.getContext("2d");
 	photo = document.getElementById("photo");
-	photo.width = window.innerWidth;
+	photo.width = width;
 	photo.src = imageURI;
 	photo.onload = function() {
       context.drawImage(photo, 0, 0);
