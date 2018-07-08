@@ -53,8 +53,10 @@ function capture() {
 }
 
 function save() {
+	alert('retrieving canvas object');
 	var c = document.getElementById('canvas');
 	alert(c);
+	alert('saving object to image library');
 	try {
 		window.canvas2ImagePlugin.saveImageDataToLibrary(
 	        function(message){
