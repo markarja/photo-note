@@ -56,6 +56,8 @@ function save() {
 	alert('retrieving canvas object');
 	var c = document.getElementById('canvas');
 	alert(c);
+	var dataURL = c.toDataURL();
+	alert(dataURL);
 	alert('saving object to image library');
 	try {
 		window.canvas2ImagePlugin.saveImageDataToLibrary(
@@ -65,7 +67,7 @@ function save() {
 	        function(error){
 	            alert(error);
 	        },
-	        document.getElementById('canvas')
+	        'canvas'
 	    );
 	} catch (e) {
 		alert(e);
