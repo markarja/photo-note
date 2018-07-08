@@ -128,7 +128,7 @@ function handle(canvas, event, source) {
     	
     	document.getElementById("text").style.visibility = 'hidden';
     	context.font = "10px Arial";
-    	context.fillText(document.getElementById("text").value,x - (x0 / 2),y - 5);
+    	context.fillText(document.getElementById("text").value, Math.abs(x - x0) / 2, y - 5);
     	context.fillStyle = '#ffffff';
     	document.getElementById("text").value = '';
         document.getElementById('help').innerHTML = 
