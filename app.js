@@ -83,7 +83,7 @@ function handle(canvas, event, source) {
 	
     var rect = canvas.getBoundingClientRect();
     
-    alert("x = " + x + ", y = " + y + ", x0 = " + x0  +", y0 = " + y0);
+    //alert("x = " + x + ", y = " + y + ", x0 = " + x0  +", y0 = " + y0);
 	
     if(source == 'canvas') {
     	x = event.clientX - rect.left;
@@ -128,7 +128,11 @@ function handle(canvas, event, source) {
     	
     	document.getElementById("text").style.visibility = 'hidden';
     	context.font = "10px Arial";
-    	context.fillText(document.getElementById("text").value, Math.abs(x - x0) / 2, y - 5);
+    	if(Math.abs(x - x0) > Math.abs(y - y0)) {
+    		context.fillText(document.getElementById("text").value, Math.abs(x - x0) / 2, y - 10);
+    	} else {
+    		context.fillText(document.getElementById("text").value, x - 10, Math.abs(y - y0) / 2);
+    	}
     	context.fillStyle = '#ffffff';
     	document.getElementById("text").value = '';
         document.getElementById('help').innerHTML = 
