@@ -3,6 +3,8 @@ var canvas = null;
 var context = null;
 var state = 0;
 var x, y, x0, y0;
+var width = 0;
+var height = 0;
 
 if (!String.prototype.startsWith) {
   String.prototype.startsWith = function(searchString, position) {
@@ -26,11 +28,14 @@ function init() {
 	
 	document.addEventListener("deviceready", onDeviceReady, false);
 	
+	width = window.innerWidth * 0.75;
+	height = window.innerHeight;
+	
 	photo = document.getElementById("photo");
-	photo.width = window.innerWidth;
+	photo.width = width;
 	canvas = document.getElementById("canvas");
-	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight;
+	canvas.width = width;
+	canvas.height = height;
 }
 
 function onDeviceReady() {

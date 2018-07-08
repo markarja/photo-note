@@ -13,6 +13,9 @@ body {
 	left: 0px;	
 	z-index: 0;
 	visibility: hidden;
+	left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%)
 }
 
 .canvas {
@@ -20,6 +23,9 @@ body {
 	top: 0px;
 	left: 0px;	
 	z-index: 0;
+	left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%)
 }
 
 .help {
