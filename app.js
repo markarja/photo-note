@@ -60,8 +60,6 @@ function save() {
         function(error){
             alert(error);
         },
-        null,
-        null,
         document.getElementById('canvas')
     );
 }
