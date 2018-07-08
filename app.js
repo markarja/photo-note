@@ -46,13 +46,15 @@ function capture() {
 	navigator.camera.getPicture(onSuccess, onFail, { 
 			quality: 100,
 			destinationType: Camera.DestinationType.FILE_URI,
-			targetWidth: window.innerWidth,
+			targetWidth: width,
 			targetHeight: window.innerHeight	
 		}
 	);
 }
 
 function save() {
+	var c = document.getElementById('canvas');
+	alert(c);
 	try {
 		window.canvas2ImagePlugin.saveImageDataToLibrary(
 	        function(message){
@@ -136,16 +138,20 @@ function handle(canvas, event, source) {
 }
 
 function onSuccess(imageURI) {
-    canvas = document.getElementById("canvas");
-    context = canvas.getContext("2d");
-	photo = document.getElementById("photo");
-	photo.width = width;
-	photo.src = imageURI;
-	photo.onload = function() {
-      context.drawImage(photo, 0, 0);
-    };
-    document.getElementById('help').innerHTML = 
-    	getMessage('help-measure-first');
+	try {
+	    canvas = document.getElementById("canvas");
+	    context = canvas.getContext("2d");
+		photo = document.getElementById("photo");
+		photo.width = width;
+		photo.src = imageURI;
+		photo.onload = function() {
+	      context.drawImage(photo, 0, 0);
+	    };
+	    document.getElementById('help').innerHTML = 
+	    	getMessage('help-measure-first');
+	} catch (e) {
+		alert(e);
+	} 
 }
 
 function onFail(message) {
