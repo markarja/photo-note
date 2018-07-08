@@ -82,6 +82,8 @@ function reset() {
 function handle(canvas, event, source) {
 	
     var rect = canvas.getBoundingClientRect();
+    
+    alert("x = " + x + ", y = " + y + ", x0 = " + x0  +", y0 = " + y0);
 	
     if(source == 'canvas') {
     	x = event.clientX - rect.left;
