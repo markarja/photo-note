@@ -102,6 +102,14 @@
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">
 		<string>1.0.0</string>
 	</gap:config-file>
+	
+	<gap:config-file platform="ios" parent="NSCameraUsageDescription" overwrite="true">
+		<string>This app uses the camera to capture images that you can annotate.</string>
+	</gap:config-file>
+	
+	<config-file platform="ios" parent="NSPhotoLibraryUsageDescription" mode="replace">
+	  <string>Access to your Photo Library is needed in order to save images to it.</string>
+	</config-file>
 
     <feature name="http://api.phonegap.com/1.0/geolocation" />
     
